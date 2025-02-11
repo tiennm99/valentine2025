@@ -59,25 +59,8 @@ const playNewMusic = async (music) => {
 };
 
 const initializeAudio = async () => {
-    try {
-        backgroundMusic.volume = 0;
-        await backgroundMusic.play();
-        isMusicPlaying = true;
-        toggleButton.textContent = '🎵 Tạm dừng';
-
-        const fadeInInterval = setInterval(() => {
-            if (backgroundMusic.volume < 0.9) {
-                backgroundMusic.volume += 0.1;
-            } else {
-                clearInterval(fadeInInterval);
-                backgroundMusic.volume = 1.0;
-            }
-        }, 100);
-    } catch (error) {
-        console.log('Autoplay prevented:', error);
-        isMusicPlaying = false;
-        toggleButton.textContent = '🎵 Phát nhạc';
-    }
+    isMusicPlaying = false;
+    toggleButton.textContent = '🎵 Phát nhạc';
 };
 
 window.addEventListener('DOMContentLoaded', initializeAudio);
@@ -94,7 +77,7 @@ document.addEventListener('visibilitychange', () => {
     }
 });
 
-toggleButton.addEventListener('click', () => {
+toggleButton.addEventListener('click', async () => {
     if (isMusicPlaying) {
         if (isSuccessScreen) {
             successMusic.pause();
@@ -104,9 +87,9 @@ toggleButton.addEventListener('click', () => {
         toggleButton.textContent = '🎵 Phát nhạc';
     } else {
         if (isSuccessScreen) {
-            successMusic.play();
+            await successMusic.play();
         } else {
-            backgroundMusic.play();
+            await backgroundMusic.play();
         }
         toggleButton.textContent = '🎵 Tạm dừng';
     }

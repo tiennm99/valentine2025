@@ -88,6 +88,15 @@
   display: none;
 }
 
+.watermark {
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #888;
+}
+
 @media (max-width: 640px) {
   .music-controls {
       bottom: 10px;
