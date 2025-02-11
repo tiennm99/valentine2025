@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine Proposal 💝</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-pink-50">
+    <div class="music-controls">
+        <audio id="backgroundMusic" autoplay loop>
+            <source src="until-you.mp3" type="audio/mp3">
+        </audio>
+        <audio id="successMusic">
+            <source src="i-do.mp3" type="audio/mp3">
+        </audio>
+        <button id="toggleMusic" class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded-full text-sm md:text-base">
+            🎵 Tạm dừng
+        </button>
+    </div>
+
+    <div class="main-screen flex flex-col items-center justify-center min-h-screen p-4 sm:p-6 md:p-8">
+        <div class="text-center w-full max-w-md mx-auto px-4 sm:px-6">
+            <svg class="heart-icon animate-pulse mx-auto mb-4 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20" viewBox="0 0 24 24">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+
+            <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-pink-600 mb-6 sm:mb-8">
+                Làm người yêu mình nhé? 🥰
+            </h1>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <button id="yesButton" class="w-full sm:w-auto bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl text-base sm:text-lg">
+                    Ok luôn ❤️
+                </button>
+
+                <button id="noButton" class="w-full sm:w-auto bg-gray-500 hover:bg-gray-600 text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 text-base sm:text-lg">
+                    Không đời nào 😢
+                </button>
+            </div>
+
+            <p id="message" class="mt-6 text-pink-500 italic text-base sm:text-lg md:text-xl animate-fade-in hidden"></p>
+        </div>
+    </div>
+
+    <div class="success-screen flex flex-col items-center justify-center min-h-screen bg-pink-50 p-4 sm:p-6 md:p-8">
+        <div class="text-center p-6 sm:p-8 rounded-lg bg-white shadow-lg w-full max-w-md mx-auto animate-fade-in">
+            <div class="relative">
+                <svg class="heart-icon animate-pulse mx-auto mb-4 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20" viewBox="0 0 24 24">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+                <div class="hearts-animation"></div>
+            </div>
+            <h1 class="text-xl sm:text-2xl md:text-3xl font-bold text-pink-600 mb-4">
+                Cùng bắt đầu hành trình với nhau nhé ❤️
+            </h1>
+            <p class="text-gray-600 text-base sm:text-lg">
+                Cảm ơn vì đã chọn mình!
+            </p>
+            <div class="mt-4 space-y-2">
+                <p class="text-sm sm:text-base text-pink-400" id="startDate"></p>
+                <p class="text-sm sm:text-base text-pink-400">Chúc mừng chúng ta! 🎉</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
